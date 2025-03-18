@@ -3,33 +3,36 @@
 <head>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <title>Do You Wanna Go Out With Me?</title>
+    <title>Mergem la un date?</title>
 </head>
 <body>
     <div class="container">
-        <h1 class="header_text">Do you wanna go out with me?</h1>
+        <h1 class="header_text">Mergem la un date?</h1>
         <div class="gif_container">
             <img src="https://media.tenor.com/efbi1EpFlVUAAAAi/bugcat-capoo.gif" alt="Cute Capoo GIF">
         </div>
         <div class="buttons">
-            <button class="btn" id="yesButton">Yes</button>
-            <button class="btn" id="noButton">No</button>
+            <button class="btn" id="yesButton">Da</button>
+            <button class="btn" id="noButton">Nu</button>
         </div>
     </div>
 
     <script>
         document.getElementById("yesButton").addEventListener("click", function() {
-            window.location.href = "yes_page.html";
-        });
+            window.location.href = "yes.html";
+        }
 
-        document.getElementById("noButton").addEventListener("mouseover", function() {
+        document.getElementById("noButton").addEventListener("mouseover", moveButton);
+document.getElementById("noButton").addEventListener("click", moveButton);
+
+function moveButton() {
             const button = this;
             const x = Math.random() * (window.innerWidth - button.clientWidth);
             const y = Math.random() * (window.innerHeight - button.clientHeight);
             button.style.position = "absolute";
             button.style.left = `${x}px`;
             button.style.top = `${y}px`;
-        });
+        }
     </script>
 </body>
 </html>
