@@ -1,9 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <title>Mergem la un date?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-size: calc(10px + 2vmin);
+            text-align: center;
+        }
+        .container {
+            max-width: 90%;
+        }
+        .gif_container img {
+            max-width: 80%;
+            height: auto;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .btn {
+            font-size: calc(10px + 2vmin);
+            padding: 10px 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -20,12 +48,12 @@
     <script>
         document.getElementById("yesButton").addEventListener("click", function() {
             window.location.href = "yes.html";
-        }
+        });
 
         document.getElementById("noButton").addEventListener("mouseover", moveButton);
-document.getElementById("noButton").addEventListener("click", moveButton);
+        document.getElementById("noButton").addEventListener("click", moveButton);
 
-function moveButton() {
+        function moveButton() {
             const button = this;
             const x = Math.random() * (window.innerWidth - button.clientWidth);
             const y = Math.random() * (window.innerHeight - button.clientHeight);
