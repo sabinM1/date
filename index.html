@@ -12,11 +12,24 @@
             <img src="https://media.tenor.com/efbi1EpFlVUAAAAi/bugcat-capoo.gif" alt="Cute Capoo GIF">
         </div>
         <div class="buttons">
-            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
-            <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
+            <button class="btn" id="yesButton">Yes</button>
+            <button class="btn" id="noButton">No</button>
         </div>
     </div>
 
-    <script src="script.js"></script> 
+    <script>
+        document.getElementById("yesButton").addEventListener("click", function() {
+            window.location.href = "yes_page.html";
+        });
+
+        document.getElementById("noButton").addEventListener("mouseover", function() {
+            const button = this;
+            const x = Math.random() * (window.innerWidth - button.clientWidth);
+            const y = Math.random() * (window.innerHeight - button.clientHeight);
+            button.style.position = "absolute";
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        });
+    </script>
 </body>
 </html>
